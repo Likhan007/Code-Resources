@@ -1,0 +1,64 @@
+LAB 5 (ORDER BY , GROUP BY, HAVING, LIMIT)
+ 
+SEQUENCE NOTE:
+ 
+select columns
+from table
+where condition
+group by column
+having condition
+order by columns
+ 
+ 
+ 
+--------------TABLE--------------
+CREATE TABLE Employee (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Country VARCHAR(255),
+    Age INT,
+    Salary DECIMAL(10, 2),
+    Experience INT,
+    Designation VARCHAR(255)
+);
+ 
+insert into employee VALUES (1,'JANE','USA',34,3000,6,'LEC'), (2,'MISSY','USA',45,7600,8,'PROF'), (3,'LINA','CANADA',35,3500,3,'LEC'), (4,'MISSY','USA',29,2000,2,'LEC'), (5,'RAFI','GERMANY',33,3800,4,'LEC'), (6,'SUNNY','MAXICO',41,5000,5,'AP'), (7,'MISSY','CANADA',50,8000,9,'PROF'), (8,'LINDA','USA',40,6500,7,'AP');
+--------------********--------------
+ 
+ 
+ 
+----sorting db using country column
+ 
+SELECT * from employee order by country DESC
+ 
+----sorting db using country column
+ 
+SELECT * from employee order by country DESC,age asc
+ 
+-----proti ta country er employee number dekhte
+ 
+SELECT country,count(id) from employee group by country
+ 
+----- agertay country ke ascending akare shajaisilo. descending e shajate 
+ 
+SELECT country,count(id) from employee group by country order by Country desc;
+ 
+ 
+--- prottek designation e kotojon employee ase jante
+ 
+SELECT Designation,count(id) from employee group by Designation;
+ 
+ 
+###TIP - where er por attrebute(any column name) use hoy, aggragiate function(sum,count) use kora jabena  (HAVING USE KORA LAGBE AGGREGIATE USE KORAR JONNE)
+ 
+select country,count(id) from employee group by country having count(id)>1
+ 
+ 
+--- prottek designation e kotojon employee ase jante
+ 
+SELECT country,max(Age) from employee group by Country having MAX(age)<50 order by country desc;
+ 
+ 
+---- LIMIT BOLTE KOYTA value dekhabe sheta bujhay
+ 
+SELECT country,max(Age) from employee  group by Country  order by max(Age) desc limit 2;

@@ -1,0 +1,74 @@
+create database db
+ 
+create table Employee (ID int(50) Primary KEY AUTO_INCREMENT, Name varchar(50),city varchar(50), country varchar(50),age int(50), salary int(50),experience int(50),department varchar(50), designation varchar(50))
+ 
+ 
+### SIR ER DEOWA VALUES NA EGULA
+ 
+INSERT INTO Employee (Name, city, country, age, salary, experience, department, designation)
+VALUES
+('John Doe', 'New York', 'USA', 30, 60000, 5, 'IT', 'Software Engineer'),
+('Jane Smith', 'Los Angeles', 'USA', 28, 55000, 3, 'HR', 'HR Manager'),
+('Michael Johnson', 'Chicago', 'USA', 35, 70000, 8, 'Sales', 'Sales Manager'),
+('Emily Brown', 'London', 'UK', 32, 65000, 6, 'IT', 'Database Administrator'),
+('William Lee', 'Toronto', 'Canada', 29, 58000, 4, 'Finance', 'Financial Analyst'),
+('Sophia Wilson', 'Sydney', 'Australia', 27, 53000, 2, 'Marketing', 'Marketing Specialist'),
+('James Martinez', 'Mexico City', 'Mexico', 31, 67000, 7, 'Sales', 'Sales Representative'),
+('Olivia Garcia', 'Madrid', 'Spain', 33, 72000, 9, 'Finance', 'Finance Manager'),
+('Liam Miller', 'Berlin', 'Germany', 26, 52000, 1, 'HR', 'HR Assistant'),
+('Ava Anderson', 'Paris', 'France', 34, 69000, 6, 'IT', 'Systems Analyst');
+ 
+ 
+ 
+###TO SEE DISTINCT VALUES OF COUNTRY FROM THE TABLE
+ 
+select DISTINCT country from employee
+ 
+###TO SEE DISTINCT VALUES OF COUNTRY IN A NEW COLUMN (Column append hoyna)
+ 
+select DISTINCT country as "distinct country" from employee`
+ 
+### Aggrigate - max()
+                min()
+                avg()
+                sum()
+                count()
+ 
+SELECT  max(salary) as "MAX SALARY" FROM employee;
+SELECT  min(salary) as "MIN SALARY" FROM employee;
+SELECT  avg(salary) as "AVERAGE SALARY" FROM employee;
+SELECT  sum(salary) as "summation of SALARY" FROM employee;
+SELECT  count(salary) as "counting SALARY" FROM employee;
+ 
+### same table e dekhte caile
+ 
+SELECT  max(salary) as "MAX SALARY",
+	min(salary) as "MIN SALARY",
+	avg(salary) as "AVERAGE SALARY",
+	sum(salary) as "summation of SALARY",
+	count(salary) as "counting SALARY" FROM employee;
+ 
+### same table e dekhaite
+ 
+SELECT  count(DISTINCT  country) as "C_D_Name",
+		count(DISTINCT  city) as "C_D_city",
+        count(DISTINCT  country) as "C_D_country" from employee;
+ 
+###  specific characters range dekhte 
+ 
+select mid(name,1,3) from employee
+ 
+### searching (prviouss class er pora)
+ 
+SELECT name from employee WHERE city="brooklyn"
+		or city="berlin"
+              or city="Amburg";
+ 
+### use of IN 
+ 
+SELECT name from employee WHERE city in ("brooklyn", "berlin", "Amburg");
+ 
+ 
+### advanced search
+ 
+SELECT name from employee WHERE age in(SELECT min(age) from employee);

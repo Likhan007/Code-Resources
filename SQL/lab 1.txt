@@ -1,0 +1,79 @@
+CREATE TABLE STUDENT_INFO(ID INT(20) primary key, NAME VARCHAR(30) NOT NULL, CGPA FLOAT(4,2), SECTION VARCHAR(3), COURSE VARCHAR(10));
+ 
+SELECT cgpa FROM `student_info` WHERE name="Nabil" OR name="Esha"
+ 
+SELECT cgpa FROM `student_info` WHERE name="Nabil" AND ID=4
+ 
+SELECT cgpa FROM `student_info` WHERE name="Nabil" OR ID=5
+ 
+ 
+SELECT cgpa FROM `student_info` WHERE name="Nabil" OR ID=5 or section='a' and course="cse312";
+ 
+SELECT * FROM `student_info` WHERE cgpa!=3.45
+SELECT * FROM `student_info` WHERE not cgpa=3.90
+ 
+		To add New Column/attribute Named CourseName
+ 
+alter table student_info add course_name varchar(20);
+ 
+		Now updating value from null to course_name
+ 
+update student_info set course_name="dbms" where id=1;
+ 
+update student_info set course_name="dbms" where COURSE="CSE311";
+UPDATE student_info set course_name="dbms_lab" where course="CSE312";
+ 
+		to delete table row
+ 
+alter table student_info drop course_name
+ 
+		to delete 1 row from table
+ 
+delete from student_info where id=6;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+-------------------------------------------------------
+ 
+################DBMS LIKHAN
+ 
+ 
+1 . create database Test_Transmission;
+ 
+ 
+2.1 . create table Transmission_history(
+    				  Id int(50) PRIMARY KEY AUTO_INCREMENT, 
+                                  Bandwidth int(50), 
+                                  channel decimal(10,3), 
+                                  downlink decimal(10,2), 
+                                  uplink decimal(10,2), 
+                                  frequency int(50) , 
+                                  country varchar(50) , 
+                                  band decimal(10,2));
+ 
+ 
+ 
+2.2 . insert into transmission_history (bandwidth,channel,downlink,uplink,frequency,country,Band) VALUES
+				(3000,2.0,14.5,20.88,520,"USA",4.44),
+                                (1575,3.88,30.20,40.00,459,"UK",8.98),
+                                (1685,3.225,40.20,99.00,489,"Japan",8.90);
+ 
+ 
+ 
+3 . select frequency from transmission_history where name = "USA" or name = "Japan"
+ 
+ 
+ 
+4 . update transmission_history set band=6.45 where country="UK";
+ 
+ 
+ 
+5 . alter table transmission_history add scale float;
+ 
+ 
+ 
+6 . delete from transmission_history where frequency=459;
