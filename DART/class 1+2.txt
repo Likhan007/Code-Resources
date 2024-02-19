@@ -1,0 +1,304 @@
+//////////////////////////////////////////Previous class review/////////////////////////////////////////////////////
+
+
+// void main(){
+//   var num1=100;
+//   var num2=30;
+//   List<String> list = ["Sun","Mon","Tues","Wed"];
+//   Set<String> set={"Sun","Mon","Tues","Wed"};
+//   Map<String,dynamic>map={
+//     "name":"Diu",
+//     "Age":100
+//   };
+//
+//   print(list);
+//   print(set);
+//   print(map);
+//
+//   num n1=23;
+//   num n2=23.67;
+//   String st1 = n1.toString();
+//   print(st1.runtimeType);
+//   String st2 = n2.toString();
+//   print(st2.runtimeType);
+//
+// }
+
+
+
+//////////////////////////////////////////Arrow Function (maybe)/////////////////////////////////////////////////////
+
+
+// int add(int n1,int n2) => n1+n2;
+// int sub(int n1,int n2) => n1-n2;
+// int mul(int n1,int n2) => n1*n2;
+// double div(int n1,int n2) => n1/n2;
+// int div2(int n1,int n2) => n1~/n2;
+//
+// void main(){
+//   int num1=100;
+//   int num2=30;
+//   print("Addition is : ${add(num1,num2)}");
+//   print("Substraction is : ${sub(num1,num2)}");
+//   print("Multiplication is : ${mul(num1,num2)}");
+//   print("Double Division is : ${div(num1,num2)}");
+//   print("Int Division is : ${div2(num1,num2)}");
+//
+// }
+
+
+
+///////////////////////////////////////Taking Input////////////////////////////////////////////////////////
+
+
+// import "dart:io";
+// void main(){
+//   print("Enter Name: ");
+//   String? name = stdin.readLineSync();
+//   print(name);
+//   print("Enter your age : ");
+//   int? age = int.parse(stdin.readLineSync()!);
+//   print("Enter Your Id: ");
+//   double id = double.parse(stdin.readLineSync()!);
+//   print(id);
+// }
+
+
+
+//////////////////////////////////////////Finding index of an element of list/////////////////////////////////////////////////////
+
+// int findIndex(List<int>list,int target){
+//   for(int i=0 ; i<list.length ; i++){
+//     if(list[i]==target){
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+//
+// void main(){
+//   List <int> list=[12,23,45,67,34,56];
+//   int target = 67;
+//   int found = findIndex(list,target);
+//   if(found==-1){
+//     print("Element is not found!!!");
+//   }
+//   else{
+//     print("Element is found at position $found");
+//   }
+// }
+
+
+
+//////////////////////////////////////////Reversing a string (with functions)/////////////////////////////////////////////////////
+
+
+// String rev(String s){
+//   String temps="";
+//   for(int i=s.length-1 ; i>=0 ; i--){
+//     temps+=s[i];
+//   }
+//   return temps;
+// }
+//
+// void main(){
+//   String st = "HELLO WORLD";
+//   String res = rev(st);
+//   print(res);
+// }
+
+
+
+
+//////////////////////////////////////////Constructor/////////////////////////////////////////////////////
+
+
+// class Teacher{
+//   String? name;
+//   int? age;
+//   double? salary;
+//
+//   Teacher(String name,int age,double salary){   // Constructor er nam class er nam er same howa lage
+//     print("Teacher is created");
+//     this.name=name;
+//     this.age=age;
+//     this.salary=salary;
+//   }
+//
+//   void display(){
+//     print("Name $name");
+//     print("Age $age");
+//     print("Salary $salary");
+//   }
+// }
+//
+// void main(){
+//   Teacher teacher = Teacher("ABCD",26,400000);
+//   teacher.display();
+// }
+
+
+
+//////////////////////////////////////////Inheritance + Overriding/////////////////////////////////////////////////////
+
+
+
+
+// import 'package:args/args.dart';
+// import "dart:io";
+//
+// class person {
+//   String? name;
+//   int? age;
+// }
+// class Doctor extends person {
+//   List<String>? ListOfDegrees;
+//   String? hospitalName;
+//
+//   void display() {
+//     print("Name $name");
+//     print("Age $age");
+//     print("Degress are:  $ListOfDegrees");
+//     print("Hospital Name:  $hospitalName");
+//   }
+// }
+//
+// class specialist extends Doctor{
+//   String? specilization;
+//   void display() {
+//     super.display();
+//     print(specilization);
+//   }
+//
+// }
+//
+// void main()
+// {
+//   specialist sp = specialist();
+//   sp.name = "ABC";
+//   sp.age = 26;
+//   sp.ListOfDegrees = ["MBBS","FCPS"];
+//   sp.hospitalName = "EFGH";
+//   sp.specilization = "Cardiologist";
+//   sp.display();
+//
+// }
+
+
+//////////////////////////////////////////Encapsulation/////////////////////////////////////////////////////
+
+       //dart e public,private,default...eshob format specifier nai
+       // age _ korle private
+
+
+// class student{
+//   String? _name;
+//   int? _age;
+//   void setName(String name){
+//     this._name=name;
+//   }
+//
+//   void setAge(int age){
+//     this._age=age;
+//   }
+//
+//   String getName(){
+//     return this._name!;
+//   }
+//
+//   int getage(){
+//     return this._age!;
+//   }
+// }
+//
+//
+// void main(){
+//   student st=student();
+//   st.setName("ABCD");
+//   st.setAge(12);
+//   print(st.getName());
+//   print(st.getage());
+// }
+
+
+
+
+//////////////////////////////////////////Polymorphism/////////////////////////////////////////////////////
+
+
+// class vehicle {
+//
+//   void run()
+//   {
+//     print("Vehicle is running");
+//   }
+// }
+//
+// class car extends vehicle
+// {
+//   ///@override///
+//   void run()
+//   {
+//     print("Car is running");
+//   }
+// }
+//
+// class bus extends vehicle
+// {
+//   ///@override///
+//   void run()
+//   {
+//     print("Bus is running");
+//   }
+// }
+//
+// void main()
+// {
+//   vehicle v = vehicle();
+//   v.run();
+//   car c = car();
+//   c.run();
+//   bus b = bus();
+//   b.run();
+//
+// }
+
+
+
+
+//////////////////////////////////////////Abstraction/////////////////////////////////////////////////////
+
+
+// abstract class vehicle{
+//   void start();
+//   void stop();
+// }
+//
+// class car extends vehicle{
+//   void start(){
+//     print("Car is starting");
+//   }
+//
+//   void stop(){
+//     print("Car is stopping");
+//   }
+// }
+//
+// class bus extends vehicle{
+//   void start(){
+//     print("Bus is starting");
+//   }
+//   void stop(){
+//     print("Bus is stopping");
+//   }
+// }
+//
+// void main(){
+//   car c = car();
+//   c.start();
+//   c.stop();
+//   bus b = bus();
+//   b.start();
+//   b.stop();
+// }
+
