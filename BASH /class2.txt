@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+
+# num1=10
+# num2=20
+# sum=$(($num1+$num2))
+# echo "Sum : $sum"
+
+# read -p "Enter first number " var1
+# read -p "Enter Second number " var2
+# sum2 = $(($var1+$var2))
+# echo "Sum2 : $sum2"
+
+
+
+########################################
+
+
+# num1=100
+# num2=30
+
+# if [ "$num1" -lt "$num2" ]
+# then
+#     echo "$num1 is less than $num2"
+# else
+#     echo "$num2 is less than $num1"
+# fi
