@@ -1,0 +1,82 @@
+#!/bin/bash
+#################################################print
+ 
+#echo "test"
+#ls
+ 
+#pwd
+#touch motu.txt
+#chmod +x motu.txt
+ 
+################################################ variables
+ 
+ 
+#name="LIKHAN"
+#age=22
+ 
+#echo "My name is $name and my age is $age"
+ 
+################################################ input
+ 
+#echo -n "Enter your name : "
+#read name
+#echo "your name is : $name"
+ 
+################################################# arithmatic operations
+ 
+#read a
+#read b
+#echo "Sum is : $(($a+$b))"
+ 
+################################################# If Else
+ 
+#read a
+#read b
+ 
+#if [ $a -gt $b ]
+#then
+#	echo "$a is greater than $b"
+#elif [ $a -lt $b ]
+#then
+#	echo "$a is less than $b"
+#else
+#	echo "Both are equal"
+#fi
+ 
+ 
+###################################################Case
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#####################################################For Loop
+ 
+ 
+#for((i=0 ; i<=10 ; i++))
+#do
+#	echo $i
+#done
+ 
+#####################################################While Loop
+ 
+ 
+#i=0
+ 
+#while [ $i -le 10 ]
+#do
+#	echo $i
+#	((i++))
+#done
+ 
+ 
+########################################################Function
+ 
+ 
+#run(){
+#	echo "The cat is running" 
+#}
+ 
+#run
