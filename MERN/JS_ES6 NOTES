@@ -1,0 +1,245 @@
+//////////////////////////////////// Spread Operaror
+
+// let poorCountry = ["Bangladesh", "Sri Lanka"];
+// let richCountry = [...poorCountry, "USA", "UK"]; 
+// console.log(richCountry);
+
+//////////////////////////////////// Rest Parameter
+
+// function calculation(extra1,extra2,...nums){
+//     let sum=0;
+//     for(let i of nums){
+//         sum = sum + i;
+//     }
+//     return sum;
+// }
+
+// console.log(calculation(1,2,3,4,5,6));
+
+//////////////////////////////////// Dynamic Function
+
+// var namer = function(MyName){
+//     console.log(MyName);
+// }
+// namer("Md. Iftekhar Rahman LIkhan");
+
+//////////////////////////////////// var types
+// var = re declare + re assign
+// let = NO re declare + re assign
+// const = NO re declare + NO re assign
+
+
+//////////////////////////////////// variable hoisting (uttolon kora)
+// First assign then declare
+
+// nam = "LIKHAN";
+// console.log(nam);
+
+
+//////////////////////////////////// for loop
+
+// for(let i=0 ; i<10 ; i+=2){
+//     console.log(i);
+// }
+
+//////////////////////////////////// for of loop
+
+// names = ["Likhan", "Mahmud" , "Samin" , "Borno"];
+
+// for(let i of names){
+//     console.log(i);
+// }
+
+//////////////////////////////////// Object (VV IMPORTANT)
+
+// bill = {name:"Bill Getts",Age:56,Height:5.6,Male:true}
+
+// billPro = {
+//     shirt : {
+//         color:"offWhite",
+//         Quality:"Good",
+//         price:200
+//     },
+//     sweater : {
+//         color:"Black",
+//         Quality:"Average",
+//         price:500,
+//         warmth:"VERY WARM"
+//     },
+//     age:65
+// }
+
+// console.log(billPro.shirt.price);
+
+//////////////////////////////////// For in Loop
+
+// for(let i in bill){
+//     console.log(i +" : " +  bill[i]);
+// }
+
+
+//////////////////////////////////// multidimentional array
+
+// var one = [1,11,111,1111];
+// var two = [2,22,222,2222];
+// var three = [3,33,333,3333];
+
+// var numlist = [one,two,three]
+
+// for(let i=0 ; i<3 ; i++){
+//     for(let j=0 ; j<4 ; j++){
+//         console.log(numlist[i][j]);
+//     }
+// }
+
+// for(let i of numlist){          // DOES SAME SHIT
+//     for(let j of i){
+//         console.log(j);
+//     }
+// }
+
+
+
+//////////////////////////////////// ES6 MAP (IMPORTANT MAYBE)
+
+// var myMap = new Map();
+// myMap.set("Key1","Bangladesh");
+// myMap.set("Key2","Bangladesh2");
+// myMap.set("Key3","Bangladesh3");
+
+// console.log(myMap);
+// console.log(myMap.keys());
+// console.log(myMap.values());
+
+// for(let k of myMap.keys()){
+//     console.log(k);
+// }
+
+//////////////////////////////////// ES6 MAP (Some Functions)
+
+// myMap.delete("key1");
+// myMap.clear()
+// console.log(myMap.get("Key1"));
+
+// for(let k of myMap){
+//     console.log(k);
+// }
+
+//////////////////////////////////// ES6 Set
+
+// var mySet = new Set();
+
+// mySet.add("Bangladesh");
+// mySet.add("India");
+// mySet.add("India");
+// mySet.add("Pakistan");
+// mySet.delete("Pakistan");
+
+// console.log(mySet);
+
+
+
+//////////////////////////////// ES6 CLASS (ES6 e class keyword ashche)
+
+// class MyClass{
+//     MyFun1(){
+//         console.log("I'm a funstion inside the class");
+//     }
+//     MyFun2(){
+//         console.log("I'm another funstion inside the class");
+//     }
+    
+//     Myname(n){
+//         console.log("My name is "+n);
+//     }
+
+// }
+
+// var obj = new MyClass;
+// obj.Myname("LIKHAN");
+
+
+
+//////////////////////////////// ES6 CLASS Constructor
+
+// Constructor holo class er nijer function jeta obj declare er time e run hoy auto
+// Eta return korte parena
+// akta class e akta constructor i thake
+
+// class MyClass{
+//     constructor(n){
+//         console.log("Hello " + n +". I'm a constructor");
+//     }
+// }
+// var obj = new MyClass("Likhan");
+
+// class saveNum{
+//     constructor(a,b){
+//         this.num1=a;
+//         this.num2=b;
+//     }
+// }
+
+// var save = new saveNum(5,6);
+
+// console.log(save.num1);
+// console.log(save.num2);
+
+
+//////////////////////////////// Static Keyword
+
+// usually class er property use korte object use kora lage
+// static use korle direct class diye object call kora jay
+
+// class MyClass{
+//     static hello(){
+//         console.log("HELLO WORLD");
+//     }
+// }
+
+// MyClass.hello();
+
+//////////////////////////////// Class Inheritance
+
+// class Parent{
+//     hello(){
+//         console.log("I'm Parent Class");
+//     }
+// }
+
+// class child extends Parent{
+//     hello(){
+//         super.hello();
+//         console.log("I'm Child Class");
+//     }
+// }
+
+// var obj = new child();
+
+// obj.hello();
+
+
+
+///////////////////////////////////////////////////////////////
+/////////////////// ES6 MODULE / JS6 MODULE ///////////////////
+///////////////////////////////////////////////////////////////
+
+/*
+module akare use kore kaj kora lagbe shob frameworks e
+module - jot/ekotrito
+es6 module export/import
+modules make it easy to control code
+debug the code
+follow DRY
+
+
+Named Export-Import (both import and export e same name thake)
+Default Export-Import (import hoy ak name e. export hoy onno name e)
+
+
+we can export class,function,variable
+
+
+ctrl + shift + r dile cache clear hoye giye refresh hobe
+*/
+
