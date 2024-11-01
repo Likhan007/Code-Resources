@@ -1,0 +1,63 @@
+                // MongoDB Basics
+
+// Show and Use Databases
+show dbs;                       // List all databases
+use firstdatabase;              // Switch to 'firstdatabase'
+
+                  // Inserting Data
+db.students.insertOne({ name: "John Doe", age: 20, major: "CS" });    // Insert one
+db.students.insertMany([                                           // Insert multiple
+   { name: "Alice", age: 22, major: "Physics" },
+   { name: "Bob", age: 23, major: "Math" }
+]);
+
+                  // Finding Data
+
+db.students.find();                   // Retrieve all documents in 'students'
+db.students.find({ name: "XYZ", ratings: 10 });   // Find with conditions
+db.students.find().count();           // Count documents
+db.students.find().limit(3);          // Limit results
+db.books.find().sort({ ratings: 1 }); // Sort by 'ratings' in ascending order
+
+// Comparison Operators
+db.books.find({ ratings: { $gt: 9 } });      // Ratings greater than 9
+db.books.find({ ratings: { $gte: 9 } });     // Ratings 9 or higher
+db.books.find({ ratings: { $lt: 9 } });      // Ratings less than 9
+db.books.find({ ratings: { $lte: 9 } });     // Ratings 9 or lower
+
+// Logical Operators
+db.books.find({ $or: [{ ratings: 8.5 }, { author: "K. Mori" }] });   // OR operator
+db.teachers.find({ paperCount: { $in: [30, 40, 45] } });             // IN operator
+
+// Querying Arrays
+db.teachers.find({ lab: "NLP" });           // Any teacher in 'NLP' lab
+db.teachers.find({ lab: ["NLP"] });         // Only in 'NLP' lab
+
+                    // Deleting Data
+db.books.deleteOne({ _id: ObjectId('671cabad32c25b04a884863d') });       // Delete one
+db.teachers.deleteMany({ paperCount: { $gt: 40 } });                    // Delete multiple
+
+                    // Updating Document
+db.teachers.updateOne(
+   { _id: ObjectId('671cabad32c25b04a884863c') },
+   { $set: { name: "Likhan Khan", paperCount: 50 } }
+);    // Update one document
+
+db.teachers.updateMany({ lab: "NLP" }, { $set: { paperCount: 0 } });  // Update many
+db.teachers.updateMany({ lab: "NLP" }, { $inc: { paperCount: 2 } });  // Increment field
+db.teachers.updateMany({ lab: "NLP" }, { $inc: { paperCount: -2 } }); // Decrement field
+
+db.teachers.updateOne(
+   { _id: ObjectId('671cabad32c25b04a884863d') },
+   { $pull: { lab: 'Astronomy' } }
+);    // Remove array element
+
+db.teachers.updateOne(
+   { _id: ObjectId('671cabad32c25b04a884863d') },
+   { $push: { lab: 'Astronomy' } }
+);    // Add single array element
+
+db.teachers.updateOne(
+   { _id: ObjectId('671cabad32c25b04a884863d') },
+   { $push: { lab: { $each: ["FANTASY", "HORROR"] } } }
+);    // Add multiple elements to array
